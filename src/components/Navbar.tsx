@@ -1,4 +1,4 @@
- import { useState } from "react";
+import { useState, useEffect } from "react";
  import { Menu, X } from "lucide-react";
  import { motion, AnimatePresence } from "framer-motion";
  
@@ -10,14 +10,49 @@
    { name: "Contact", href: "#contact" },
  ];
  
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  e.preventDefault();
+  const targetId = href.replace("#", "");
+  const element = document.getElementById(targetId);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
+
  export const Navbar = () => {
    const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("#home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navLinks.map(link => link.href.replace("#", ""));
+      for (const section of sections.reverse()) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100) {
+            setActiveLink(`#${section}`);
+            break;
+          }
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
  
    return (
      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
        <div className="container mx-auto px-6 py-4">
          <div className="flex items-center justify-between">
-           <a href="#home" className="flex items-center gap-2">
+          <a 
+            href="#home" 
+            className="flex items-center gap-2"
+            onClick={(e) => scrollToSection(e, "#home")}
+          >
              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
                <span className="font-mono font-bold text-primary-foreground text-sm">&lt;/&gt;</span>
              </div>
@@ -27,13 +62,28 @@
            {/* Desktop Navigation */}
            <div className="hidden md:flex items-center gap-8">
              {navLinks.map((link) => (
-               <a
+              <motion.a
                  key={link.name}
                  href={link.href}
-                 className="text-muted-foreground hover:text-foreground transition-colors font-mono text-sm"
+                onClick={(e) => scrollToSection(e, link.href)}
+                className={`relative font-mono text-sm transition-colors ${
+                  activeLink === link.href 
+                    ? "text-primary" 
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.95 }}
                >
                  {link.name}
-               </a>
+                {activeLink === link.href && (
+                  <motion.span
+                    layoutId="activeNav"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                    initial={false}
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </motion.a>
              ))}
            </div>
  
@@ -56,15 +106,25 @@
                className="md:hidden mt-4 pb-4"
              >
                <div className="flex flex-col gap-4">
-                 {navLinks.map((link) => (
-                   <a
+                {navLinks.map((link, index) => (
+                  <motion.a
                      key={link.name}
                      href={link.href}
-                     className="text-muted-foreground hover:text-foreground transition-colors font-mono text-sm"
-                     onClick={() => setIsOpen(false)}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className={`font-mono text-sm transition-colors ${
+                      activeLink === link.href 
+                        ? "text-primary" 
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    onClick={(e) => {
+                      scrollToSection(e, link.href);
+                      setIsOpen(false);
+                    }}
                    >
                      {link.name}
-                   </a>
+                  </motion.a>
                  ))}
                </div>
              </motion.div>
