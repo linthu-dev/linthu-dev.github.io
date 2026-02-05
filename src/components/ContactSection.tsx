@@ -1,5 +1,5 @@
- import { motion } from "framer-motion";
- import { Mail, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { motion } from "framer-motion";
+import { Mail, MapPin, Send, Github } from "lucide-react";
  import { useState } from "react";
  
  export const ContactSection = () => {
@@ -44,58 +44,48 @@
              <div className="bg-card rounded-xl border border-border p-6 card-hover">
                <h3 className="font-mono font-semibold text-lg mb-6 text-primary">Contact Info</h3>
                <div className="space-y-4">
-                 <div className="flex items-center gap-4">
-                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                     <Mail className="w-5 h-5 text-primary" />
-                   </div>
-                   <div>
-                     <p className="text-sm text-muted-foreground">Email</p>
-                     <a href="mailto:hello@example.com" className="text-foreground hover:text-primary transition-colors">
-                       hello@example.com
-                     </a>
-                   </div>
-                 </div>
-                 <div className="flex items-center gap-4">
-                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                     <MapPin className="w-5 h-5 text-primary" />
-                   </div>
-                   <div>
-                     <p className="text-sm text-muted-foreground">Location</p>
-                     <p className="text-foreground">San Francisco, CA</p>
-                   </div>
-                 </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Email</p>
+                      <a href="mailto:ggltatplanet@gmail.com" className="text-foreground hover:text-primary transition-colors">
+                        ggltatplanet@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                      <MapPin className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Location</p>
+                      <p className="text-foreground">Yangon, Myanmar</p>
+                    </div>
+                  </div>
                </div>
              </div>
  
-             <div className="bg-card rounded-xl border border-border p-6 card-hover">
-               <h3 className="font-mono font-semibold text-lg mb-6 text-primary">Follow Me</h3>
-               <div className="flex items-center gap-4">
-                 <a
-                   href="https://github.com"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                 >
-                   <Github size={20} />
-                 </a>
-                 <a
-                   href="https://linkedin.com"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                 >
-                   <Linkedin size={20} />
-                 </a>
-                 <a
-                   href="https://twitter.com"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
-                 >
-                   <Twitter size={20} />
-                 </a>
-               </div>
-             </div>
+              <div className="bg-card rounded-xl border border-border p-6 card-hover">
+                <h3 className="font-mono font-semibold text-lg mb-6 text-primary">Follow Me</h3>
+                <div className="flex items-center gap-4">
+                  <a
+                    href="https://github.com/planetlt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+                  >
+                    <Github size={20} />
+                  </a>
+                  <a
+                    href="mailto:ggltatplanet@gmail.com"
+                    className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+                  >
+                    <Mail size={20} />
+                  </a>
+                </div>
+              </div>
            </motion.div>
  
            {/* Contact Form */}
