@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
- import { Menu, X } from "lucide-react";
- import { motion, AnimatePresence } from "framer-motion";
- 
- const navLinks = [
-   { name: "Home", href: "#home" },
-   { name: "About", href: "#about" },
-   { name: "Skills", href: "#skills" },
-   { name: "Projects", href: "#projects" },
-   { name: "Contact", href: "#contact" },
- ];
- 
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import profileImage from "@/assets/profile.png";
+
+const navLinks = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Skills", href: "#skills" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
+
 const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
   e.preventDefault();
   const targetId = href.replace("#", "");
@@ -50,14 +51,16 @@ const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) =
          <div className="flex items-center justify-between">
           <a 
             href="#home" 
-            className="flex items-center gap-2"
+            className="flex items-center gap-3"
             onClick={(e) => scrollToSection(e, "#home")}
           >
-             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-               <span className="font-mono font-bold text-primary-foreground text-sm">&lt;/&gt;</span>
-             </div>
-             <span className="font-mono font-semibold text-foreground">DevPortfolio</span>
-           </a>
+            <img
+              src={profileImage}
+              alt="Lin Thu"
+              className="w-9 h-9 rounded-full border-2 border-primary/50 object-cover"
+            />
+            <span className="font-mono font-semibold text-foreground">Lin Thu</span>
+          </a>
  
            {/* Desktop Navigation */}
            <div className="hidden md:flex items-center gap-8">

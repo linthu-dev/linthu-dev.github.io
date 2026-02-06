@@ -1,8 +1,28 @@
-import { motion } from "framer-motion";
-import { ArrowDown, Github, Mail, Phone } from "lucide-react";
-import profileImage from "@/assets/profile.png";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowDown, ArrowUp, Github, Mail, Phone } from "lucide-react";
 
 export const HeroSection = () => {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20">
       <div className="container mx-auto px-6 text-center">
@@ -11,19 +31,6 @@ export const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8"
-          >
-            <img
-              src={profileImage}
-              alt="Lin Thu"
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto border-4 border-primary/50 object-cover"
-            />
-          </motion.div>
-          
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
             <span className="text-foreground">Hi, I'm </span>
             <span className="text-gradient">Lin Thu</span>
@@ -46,9 +53,14 @@ export const HeroSection = () => {
             >
               Contact Me
             </a>
-            <span className="px-4 py-2 bg-green-500/20 text-green-400 rounded-full font-mono text-sm border border-green-500/30">
-              Available for Freelance
-            </span>
+            <motion.span 
+              className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-mono text-sm border border-primary/30 flex items-center gap-2"
+              animate={{ opacity: [0.7, 1, 0.7] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              Open to Work
+            </motion.span>
           </div>
 
           <div className="flex items-center justify-center gap-6">
@@ -75,17 +87,37 @@ export const HeroSection = () => {
           </div>
         </motion.div>
  
-         <motion.div
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 1 }}
-           transition={{ delay: 1, duration: 0.6 }}
-           className="absolute bottom-8 left-1/2 -translate-x-1/2"
-         >
-           <a href="#about" className="text-muted-foreground hover:text-primary transition-colors animate-bounce block">
-             <ArrowDown size={24} />
-           </a>
-         </motion.div>
-       </div>
-     </section>
-   );
- };
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.6 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors"
+          onClick={() => scrollToSection("about")}
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ArrowDown size={24} />
+          </motion.div>
+        </motion.button>
+      </div>
+
+      {/* Back to Top Button */}
+      <AnimatePresence>
+        {showBackToTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => scrollToSection("home")}
+            className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center shadow-lg hover:opacity-90 transition-opacity glow"
+          >
+            <ArrowUp size={20} />
+          </motion.button>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+};
