@@ -15,24 +15,24 @@ import { Mail, MapPin, Send, Github } from "lucide-react";
      console.log(formData);
    };
  
-   return (
-     <section id="contact" className="py-24 bg-surface">
-       <div className="container mx-auto px-6">
-         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.6 }}
-         >
-           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-             Get In <span className="text-gradient">Touch</span>
-           </h2>
-           <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
-             Have a project in mind or just want to chat? Feel free to reach out!
-           </p>
-         </motion.div>
- 
-         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+    return (
+      <section id="contact" className="py-16 sm:py-24 bg-surface">
+        <div className="container mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4">
+              Get In <span className="text-gradient">Touch</span>
+            </h2>
+            <p className="text-muted-foreground text-center text-sm sm:text-base max-w-2xl mx-auto mb-10 sm:mb-16">
+              Have a project in mind or just want to chat? Feel free to reach out!
+            </p>
+          </motion.div>
+  
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 max-w-4xl mx-auto">
            {/* Contact Info */}
            <motion.div
              initial={{ opacity: 0, x: -20 }}

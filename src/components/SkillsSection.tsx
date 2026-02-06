@@ -22,23 +22,23 @@ const skills = {
 
 export const SkillsSection = () => {
   return (
-    <section id="skills" className="py-24 bg-surface">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-16 sm:py-24 bg-surface">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4">
             Tech <span className="text-gradient">Stack</span>
           </h2>
-          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+          <p className="text-muted-foreground text-center text-sm sm:text-base max-w-2xl mx-auto mb-10 sm:mb-16">
             Technologies and tools I use to bring ideas to life
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {Object.entries(skills).map(([category, categorySkills], categoryIndex) => (
             <motion.div
               key={category}
