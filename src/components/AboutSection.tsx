@@ -29,48 +29,48 @@ const personalInfo = [
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-24">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-16 sm:py-24">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4">
             About <span className="text-gradient">Me</span>
           </h2>
-          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+          <p className="text-muted-foreground text-center text-sm sm:text-base max-w-2xl mx-auto mb-10 sm:mb-16">
             Android Developer with 2+ years of experience building mobile applications
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-card rounded-xl border border-border p-8 card-hover">
-              <p className="text-foreground leading-relaxed mb-6">
+            <div className="bg-card rounded-xl border border-border p-4 sm:p-6 md:p-8 card-hover">
+              <p className="text-foreground leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                 I want to live in IT world by utilizing my prior experiences, knowledge, abilities
                 and team spirit. I want to create useful and popular applications. Currently, I am working as an Android Developer at Myanmar Smart City.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
+              <p className="text-muted-foreground leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                 I decided that I must be a mobile developer since my second year student life at Computer University.
                 I just love coding logic, solving coding problems and advising for another person's problems when coding.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
+              <p className="text-muted-foreground leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                 I like listening to music, mostly acoustic versions. Sometimes I listen to bass and trap. I also enjoy watching movies, especially animations. Battle Through the Heavens is my favorite animation series.
               </p>
               
               {/* Personal Info Grid */}
-              <div className="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-border">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-border">
                 {personalInfo.map((info) => (
                   <div key={info.label} className="flex flex-col">
                     <span className="text-xs text-muted-foreground">{info.label}</span>
-                    <span className="text-sm text-foreground">{info.value}</span>
+                    <span className="text-xs sm:text-sm text-foreground">{info.value}</span>
                   </div>
                 ))}
               </div>
@@ -82,7 +82,7 @@ export const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-card rounded-xl border border-border p-6 card-hover mt-6"
+              className="bg-card rounded-xl border border-border p-4 sm:p-6 card-hover mt-4 sm:mt-6"
             >
               <h3 className="font-mono font-semibold text-lg mb-4 text-primary flex items-center gap-2">
                 <GraduationCap className="w-5 h-5" />
@@ -107,7 +107,7 @@ export const AboutSection = () => {
             </motion.div>
           </motion.div>
 
-          <div className="grid gap-6">
+          <div className="grid gap-4 sm:gap-6">
             {highlights.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -115,14 +115,14 @@ export const AboutSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-card rounded-xl border border-border p-6 card-hover flex items-start gap-4"
+                className="bg-card rounded-xl border border-border p-4 sm:p-6 card-hover flex items-start gap-3 sm:gap-4"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                  <item.icon className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                  <h3 className="font-semibold text-foreground mb-1 text-sm sm:text-base">{item.title}</h3>
+                  <p className="text-muted-foreground text-xs sm:text-sm">{item.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -133,10 +133,10 @@ export const AboutSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-card rounded-xl border border-border p-6 card-hover"
+              className="bg-card rounded-xl border border-border p-4 sm:p-6 card-hover"
             >
-              <h3 className="font-mono font-semibold text-lg mb-4 text-primary">Participations</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <h3 className="font-mono font-semibold text-base sm:text-lg mb-4 text-primary">Participations</h3>
+              <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                   2017 Myanmar College Programming Contest

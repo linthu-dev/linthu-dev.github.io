@@ -42,24 +42,24 @@ export const ProjectsSection = () => {
   const otherProjects = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-24">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-16 sm:py-24">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+          <p className="text-muted-foreground text-center text-sm sm:text-base max-w-2xl mx-auto mb-10 sm:mb-16">
             Some of the mobile applications I've worked on
           </p>
         </motion.div>
 
         {/* Featured Projects */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-16">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.title}
