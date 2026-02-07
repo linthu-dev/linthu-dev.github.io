@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Send, Github } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin } from "lucide-react";
  import { useState } from "react";
  
  export const ContactSection = () => {
@@ -77,6 +77,14 @@ import { Mail, MapPin, Send, Github } from "lucide-react";
                     className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
                   >
                     <Github size={20} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/lin-thu-213296275"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
+                  >
+                    <Linkedin size={20} />
                   </a>
                   <a
                     href="mailto:linthu49754@gmail.com"
