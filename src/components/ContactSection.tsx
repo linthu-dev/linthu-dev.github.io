@@ -50,8 +50,8 @@ import { Mail, MapPin, Send, Github } from "lucide-react";
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Email</p>
-                      <a href="mailto:ggltatplanet@gmail.com" className="text-foreground hover:text-primary transition-colors">
-                        ggltatplanet@gmail.com
+                    <a href="mailto:linthu49754@gmail.com" className="text-foreground hover:text-primary transition-colors">
+                        linthu49754@gmail.com
                       </a>
                     </div>
                   </div>
@@ -61,7 +61,7 @@ import { Mail, MapPin, Send, Github } from "lucide-react";
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Location</p>
-                      <p className="text-foreground">Yangon, Myanmar</p>
+                      <p className="text-foreground">Sanchaung Township, Yangon, Myanmar</p>
                     </div>
                   </div>
                </div>
@@ -79,7 +79,7 @@ import { Mail, MapPin, Send, Github } from "lucide-react";
                     <Github size={20} />
                   </a>
                   <a
-                    href="mailto:ggltatplanet@gmail.com"
+                    href="mailto:linthu49754@gmail.com"
                     className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all"
                   >
                     <Mail size={20} />

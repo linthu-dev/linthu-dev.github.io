@@ -37,7 +37,7 @@ export const HeroSection = () => {
           </h1>
           
           <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-6 sm:mb-8 font-mono px-2">
-            Android Mobile Developer with 2+ years of experience building mobile applications
+            Mobile Application Developer with 4+ years of experience in Android & Flutter development
           </p>
 
           <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
@@ -73,13 +73,13 @@ export const HeroSection = () => {
               <Github size={24} />
             </a>
             <a
-              href="tel:09793549754"
+              href="tel:+9509944096748"
               className="text-muted-foreground hover:text-primary transition-colors p-2"
             >
               <Phone size={24} />
             </a>
             <a
-              href="mailto:ggltatplanet@gmail.com"
+              href="mailto:linthu49754@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors p-2"
             >
               <Mail size={24} />

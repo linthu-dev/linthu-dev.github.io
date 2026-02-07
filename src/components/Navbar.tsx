@@ -167,23 +167,23 @@ export const Navbar = () => {
               className="w-24 h-24 sm:w-32 sm:h-32 rounded-full border-4 border-primary/50 object-cover mb-4"
             />
             <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-1">Lin Thu</h2>
-            <p className="text-primary font-mono text-sm mb-4">Android Mobile Developer</p>
+            <p className="text-primary font-mono text-sm mb-4">Mobile Application Developer</p>
             
             <div className="w-full space-y-3 text-left">
               <div className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg">
                 <MapPin className="w-4 h-4 text-primary shrink-0" />
-                <span className="text-sm text-foreground">Yangon, Myanmar</span>
+                <span className="text-sm text-foreground">Sanchaung, Yangon, Myanmar</span>
               </div>
               <div className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <a href="mailto:ggltatplanet@gmail.com" className="text-sm text-foreground hover:text-primary transition-colors truncate">
-                  ggltatplanet@gmail.com
+                <a href="mailto:linthu49754@gmail.com" className="text-sm text-foreground hover:text-primary transition-colors truncate">
+                  linthu49754@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <a href="tel:09793549754" className="text-sm text-foreground hover:text-primary transition-colors">
-                  09793549754
+                <a href="tel:+9509944096748" className="text-sm text-foreground hover:text-primary transition-colors">
+                  (+95) 09944096748
                 </a>
               </div>
               <div className="flex items-center gap-3 p-3 bg-muted/30 rounded-lg">
@@ -202,13 +202,13 @@ export const Navbar = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="mailto:ggltatplanet@gmail.com"
+                href="mailto:linthu49754@gmail.com"
                 className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href="tel:09793549754"
+                href="tel:+9509944096748"
                 className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Phone className="w-5 h-5" />
