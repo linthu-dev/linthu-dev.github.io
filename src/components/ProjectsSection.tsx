@@ -1,38 +1,76 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Folder, Smartphone } from "lucide-react";
+import { Github, Smartphone } from "lucide-react";
 
 const projects = [
   {
-    title: "Social Media Mobile App",
-    description: "Social media mobile application that connects with related website. Full-featured platform with real-time communication.",
-    tags: ["Android", "Java", "Firebase", "WebSocket"],
+    title: "Ninjavan Partner & Shipper Apps",
+    description: "Delivery pickup system for partners and shippers with creative UI, API integrations and realtime notifications using Flutter.",
+    tags: ["Flutter", "Dart", "REST API", "Notifications"],
     github: "https://github.com/planetlt",
     featured: true,
   },
   {
-    title: "Delivery Mobile App",
-    description: "Delivery mobile app for pick up and delivery services that connects with related website backend.",
-    tags: ["Android", "Kotlin", "REST API", "Maps"],
+    title: "Token Doctor",
+    description: "Online hospital appointment booking app (patient & staff) with payment integrations, custom UI and realtime notifications.",
+    tags: ["Flutter", "Dart", "Payments", "API"],
     github: "https://github.com/planetlt",
     featured: true,
   },
   {
-    title: "POS Mobile Application",
-    description: "Point of Sale mobile application that connects with printers and POS software for Computer integration.",
-    tags: ["Android", "Bluetooth", "Printer SDK", "SQLite"],
+    title: "Social Communication App",
+    description: "Full-featured social app with audio/video calls, screen sharing (Tencent Cloud), real-time push notifications, payment integrations and TikTok-style video playback.",
+    tags: ["Android", "Java", "WebRTC", "JPush"],
     github: "https://github.com/planetlt",
     featured: true,
   },
   {
-    title: "Product Trading App",
-    description: "Product trading application for showing product details with beautiful UI and smooth navigation.",
+    title: "Ninja Next & Ninja One",
+    description: "Parcel creation, delivery management by user role, ticket system, reporting, food pre-ordering with credit payment, and HR policy features.",
+    tags: ["Flutter", "Dart", "REST API"],
+    github: "https://github.com/planetlt",
+    featured: true,
+  },
+  {
+    title: "All-in-One POS System",
+    description: "Mobile POS and business management system for tracking sales, income/expenses, profit & loss reports, inventory monitoring and multi-branch operations.",
+    tags: ["Android", "Java", "MVVM", "SQLite"],
+    github: "https://github.com/planetlt",
+    featured: true,
+  },
+  {
+    title: "Mahar Android TV (v2)",
+    description: "Video playing application for Android TV with customized ads integration, live TV channels, search functionality and modified video player.",
+    tags: ["Android", "Kotlin", "MVP", "Ads SDK"],
+    github: "https://github.com/planetlt",
+  },
+  {
+    title: "Ride-Hailing Apps",
+    description: "Passenger and driver apps supporting real-time ride booking, distance-based fare calculation, trip pre-booking, and receipt printing.",
+    tags: ["Flutter", "Dart", "Maps", "Payments"],
+    github: "https://github.com/planetlt",
+  },
+  {
+    title: "Construction Equipment Trading",
+    description: "App for selling and renting big construction equipment with creative UI, search with specific info, payment integrations and suggestion posts.",
     tags: ["Flutter", "Dart", "REST API"],
     github: "https://github.com/planetlt",
   },
   {
-    title: "Social Media Maintenance",
-    description: "Maintained and upgraded social media app with payments, audio/video upgrades, screen share, video conferencing, and UI redesign.",
-    tags: ["Android", "WebRTC", "Payments"],
+    title: "Chan Myanmar Warehouse App",
+    description: "Warehouse checking system with nearest warehouse detection based on staff location, API integrations and report history.",
+    tags: ["Flutter", "Dart", "Geolocation"],
+    github: "https://github.com/planetlt",
+  },
+  {
+    title: "Fuel Payment & Management",
+    description: "Two mobile apps for drivers and fuel station staff with QR code payments using company credit points and fuel usage control.",
+    tags: ["Flutter", "Dart", "QR Code"],
+    github: "https://github.com/planetlt",
+  },
+  {
+    title: "Room & House Rental System",
+    description: "Multi-user platform for house owners and renters with part-time services, payment reminders and transaction tracking.",
+    tags: ["Flutter", "Dart", "Payments"],
     github: "https://github.com/planetlt",
   },
 ];
@@ -54,7 +92,7 @@ export const ProjectsSection = () => {
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <p className="text-muted-foreground text-center text-sm sm:text-base max-w-2xl mx-auto mb-10 sm:mb-16">
-            Some of the mobile applications I've worked on
+            Some of the mobile applications I've built and contributed to
           </p>
         </motion.div>
 
@@ -112,7 +150,7 @@ export const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-xl font-semibold text-center mb-8">Other Projects</h3>
-          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
             {otherProjects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -139,7 +177,17 @@ export const ProjectsSection = () => {
                     )}
                   </div>
                 </div>
-                <p className="text-muted-foreground text-xs">{project.description}</p>
+                <p className="text-muted-foreground text-xs mb-3">{project.description}</p>
+                <div className="flex flex-wrap gap-1">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-1.5 py-0.5 bg-surface text-xs text-muted-foreground rounded font-mono"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </motion.div>
             ))}
           </div>

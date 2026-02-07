@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
 
 const skills = {
+  "Programming Languages": [
+    { name: "Java", level: 85 },
+    { name: "Kotlin", level: 70 },
+    { name: "Dart", level: 75 },
+  ],
   "Mobile Development": [
-    { name: "Java", level: 80 },
-    { name: "Kotlin", level: 60 },
-    { name: "Flutter", level: 60 },
-    { name: "Android SDK", level: 75 },
+    { name: "Android SDK", level: 85 },
+    { name: "Flutter", level: 75 },
+    { name: "MVVM / MVP", level: 80 },
+    { name: "Firebase", level: 70 },
   ],
-  "Web Technologies": [
-    { name: "HTML", level: 40 },
-    { name: "CSS", level: 40 },
-    { name: "JavaScript", level: 35 },
-  ],
-  "Tools & Design": [
-    { name: "Photoshop", level: 70 },
-    { name: "Git", level: 65 },
-    { name: "Android Studio", level: 80 },
-    { name: "Firebase", level: 60 },
+  "Tools & Others": [
+    { name: "Git", level: 75 },
+    { name: "Android Studio", level: 85 },
+    { name: "REST API", level: 80 },
+    { name: "Photoshop", level: 65 },
   ],
 };
 
