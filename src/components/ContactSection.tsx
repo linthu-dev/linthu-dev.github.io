@@ -1,19 +1,42 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Send, Github, Linkedin } from "lucide-react";
- import { useState } from "react";
- 
- export const ContactSection = () => {
-   const [formData, setFormData] = useState({
-     name: "",
-     email: "",
-     message: "",
-   });
- 
-   const handleSubmit = (e: React.FormEvent) => {
-     e.preventDefault();
-     // Handle form submission
-     console.log(formData);
-   };
+import { useState } from "react";
+import { toast } from "@/hooks/use-toast";
+
+export const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      toast({
+        title: "Missing fields",
+        description: "Please fill in all fields before sending.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:linthu49754@gmail.com?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoLink;
+
+    toast({
+      title: "Email client opened!",
+      description: "Please send the message from your email app.",
+    });
+
+    setFormData({ name: "", email: "", message: "" });
+  };
  
     return (
       <section id="contact" className="py-16 sm:py-24 bg-surface">
