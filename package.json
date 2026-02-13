@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://PlanetLT.github.io/linthu.github.io/",
+  "homepage": "https://linthu-dev.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
