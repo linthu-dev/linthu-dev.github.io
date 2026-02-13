@@ -15,7 +15,6 @@
        <SkillsSection />
        <ProjectsSection />
        <ContactSection />
-       <Footer />
      </div>
    );
  };
